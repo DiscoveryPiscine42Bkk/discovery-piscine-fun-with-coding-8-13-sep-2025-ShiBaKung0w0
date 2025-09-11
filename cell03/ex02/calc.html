@@ -22,10 +22,7 @@
 <body>
     <h1>It’s over 9000 Calculator</h1>
 
-    <!-- Left number input -->
     <input type="text" id="left" placeholder="Left number">
-
-    <!-- Operator select -->
     <select id="operator">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -33,11 +30,7 @@
         <option value="/">/</option>
         <option value="%">%</option>
     </select>
-
-    <!-- Right number input -->
     <input type="text" id="right" placeholder="Right number">
-
-    <!-- Submit button -->
     <input type="submit" value="Try me!" id="calculateBtn">
 
     <script>
@@ -49,17 +42,21 @@
         calculateBtn.addEventListener('click', function(event) {
             event.preventDefault();
 
-            const left = parseInt(leftInput.value);
-            const right = parseInt(rightInput.value);
+            const left = parseFloat(leftInput.value);
+            const right = parseFloat(rightInput.value);
             const operator = operatorSelect.value;
 
-            // Check for valid positive integers
-            if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+            // ตรวจสอบว่าเป็นจำนวนเต็มบวกเท่านั้น
+            if (
+                isNaN(left) || isNaN(right) ||
+                !Number.isInteger(left) || !Number.isInteger(right) ||
+                left < 0 || right < 0
+            ) {
                 alert('Error :(');
                 return;
             }
 
-            // Division or modulo by zero
+            // ตรวจสอบหารหรือ modulo ด้วย 0
             if ((operator === '/' || operator === '%') && right === 0) {
                 console.log("It’s over 9000!");
                 alert("It’s over 9000!");
@@ -89,7 +86,7 @@
             alert(result);
         });
 
-        // Alert every 30 seconds
+        // Alert ทุก 30 วินาที
         setInterval(() => {
             alert('Please, use me...');
         }, 30000);
