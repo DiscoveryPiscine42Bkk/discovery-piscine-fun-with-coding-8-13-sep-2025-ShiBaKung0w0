@@ -1,12 +1,10 @@
-function newTodo() {
-    let task = prompt("Enter a new TO DO:");
-    if (task && task.trim() !== "") {
-        let todos = getTodos();
-        todos.unshift(task.trim());
-        saveTodos(todos);
-        console.log("Saved todos:", todos); // debug
-        renderTodos();
-    }
+function getTodos() {
+    let todos = localStorage.getItem('todos');
+    return todos ? JSON.parse(todos) : [];
+}
+
+function saveTodos(todos) {
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function renderTodos() {
@@ -27,3 +25,15 @@ function renderTodos() {
         list.prepend(div);
     });
 }
+
+function newTodo() {
+    let task = prompt("Enter a new TO DO:");
+    if (task && task.trim() !== "") {
+        let todos = getTodos();
+        todos.unshift(task.trim());
+        saveTodos(todos);
+        renderTodos();
+    }
+}
+
+window.onload = renderTodos;
