@@ -6,19 +6,15 @@
     <link rel="stylesheet" href="backgroound.css">
 </head>
 <body>
-    <h1>Random Background Color</h1>
     <button id="changeBtn">Change Background</button>
 
     <script>
-        // ฟังก์ชันสุ่มสี
         function getRandomColor() {
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
             return `rgb(${r}, ${g}, ${b})`;
         }
-
-        // รอให้ DOM โหลดแล้วค่อยผูก event
         window.onload = function() {
             const button = document.getElementById("changeBtn");
             button.onclick = function() {
