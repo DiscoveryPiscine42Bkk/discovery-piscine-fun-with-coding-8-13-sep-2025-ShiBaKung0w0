@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+table {
+    width: 100%;              /* screen widht */
+    height: 100vh;            /* screen hight */
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 3vw;           
+}
+
+td {
+    width: 50%;
+    border: 1px solid black;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+}
+
+.cell1 {
+    background-color: lightgreen;
+}
+
+.cell2 {
+    background-color: lightcoral;
+}
+
+
+@media (max-width: 600px) {
+    table {
+        font-size: 5vw;       
+    }
+}

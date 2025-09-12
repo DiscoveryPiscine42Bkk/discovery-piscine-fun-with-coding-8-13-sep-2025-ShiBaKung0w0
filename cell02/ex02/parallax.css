@@ -1,0 +1,50 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+.parallax {
+    height: 100vh;  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.img1 {
+    background-image: url("art.png"); 
+}
+
+.img2 {
+    background-image: url("0.png"); 
+}
+
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 32px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.text-block {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
