@@ -46,7 +46,6 @@
             const right = parseFloat(rightInput.value);
             const operator = operatorSelect.value;
 
-            // ตรวจสอบว่าเป็นจำนวนเต็มบวกเท่านั้น
             if (
                 isNaN(left) || isNaN(right) ||
                 !Number.isInteger(left) || !Number.isInteger(right) ||
@@ -56,7 +55,6 @@
                 return;
             }
 
-            // ตรวจสอบหารหรือ modulo ด้วย 0
             if ((operator === '/' || operator === '%') && right === 0) {
                 console.log("It’s over 9000!");
                 alert("It’s over 9000!");
@@ -86,7 +84,6 @@
             alert(result);
         });
 
-        // Alert ทุก 30 วินาที
         setInterval(() => {
             alert('Please, use me...');
         }, 30000);
